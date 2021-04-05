@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ members.name }} | {% endblock %}
+
+{% block content %}
+    
+        {% if members.image %}
+            <figure class="image is-3by1 mb-6">
+                <img src="{{ members.image.url }}">
+            </figure>
+        {% endif %}
+        
+        <h1 class="name"><strong>Name:</strong>{{ members.name }}</h1>
+        <p><strong>Husband Rank:</strong>{{ members.rank }}</p>
+        <p><strong>Phone No:</strong>{{ members.phone }}</p>
+        <p><strong>Husband's Name:</strong>{{ members.husbandname }}</p>
+        <p><strong>Husband's appointment: </strong>{{ members.appointment }}</p>
+
+    {% if similar_rank %}
+        <hr>
+        <div class="columns is-multiline">
+            <div class="column is-12">
+                <h2 class="subtitle">Members with Similar Rank</h2>
+            </div>
+            {% for rank in similar_rank %}
+                {% include 'items.html' %}
+            {% endfor %}
+        </div>
+
+
+    {% endif %}
+    
+{% endblock %}

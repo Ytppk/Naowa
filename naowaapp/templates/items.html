@@ -1,0 +1,12 @@
+<div class="column is-3 product-list-item">
+    <div class="box">
+        <figure class="image is-4by3 mb-4">
+            <img src="{{ member.get_thumbnail }}">
+        </figure>
+        <h2 class="subtitle">{{ member.name }}</h2>
+        <h3 class="price is-size-6 mb-5">{{ member.rank }}</h2>
+        
+            <hr>
+            <a href="{% url 'result' member.slug %}" class="button is-dark is-uppercase">View</a>
+    </div>
+</div>
